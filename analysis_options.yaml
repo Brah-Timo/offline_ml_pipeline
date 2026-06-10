@@ -1,0 +1,22 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_print
+    - avoid_redundant_argument_values
+    - cancel_subscriptions
+    - close_sinks
+    - prefer_const_constructors
+    - prefer_final_fields
+    - prefer_single_quotes
+    - sort_pub_dependencies
+    - unawaited_futures
+
+analyzer:
+  errors:
+    missing_required_param: error
+    missing_return: error
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"

@@ -1,0 +1,66 @@
+name: offline_ml_pipeline
+description: >
+  Train, validate, and export ML models on-device from CSV to .tflite with full privacy—no server or internet, powered by ONNX Runtime and Dart FFI.
+
+version: 0.1.0
+homepage: https://github.com/Brah-Timo/offline_ml_pipeline
+repository: https://github.com/Brah-Timo/offline_ml_pipeline
+issue_tracker: https://github.com/Brah-Timo/offline_ml_pipeline/issues
+
+topics:
+  - machine-learning
+  - on-device
+  - flutter
+  - dart-ffi
+  - offline-ai
+  
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── FFI & native interop ──────────────────────────────────────────────────
+  ffi: ^2.1.0                # Pointer, Struct, Arena — dart:ffi companion
+
+  # ── File & path management ───────────────────────────────────────────────
+  path: ^1.9.0
+  path_provider: ^2.1.3      # getApplicationDocumentsDirectory etc.
+
+  # ── CSV parsing ──────────────────────────────────────────────────────────
+  csv: ^6.0.0
+
+  # ── Binary encoding (FlatBuffers / TFLite flatbuffer) ────────────────────
+  flat_buffers: ^23.5.26
+
+  # ── Compression (zip training artifacts) ────────────────────────────────
+  archive: ^3.4.10
+
+  # ── Collection helpers ───────────────────────────────────────────────────
+  collection: ^1.18.0
+
+  # ── Async utilities ──────────────────────────────────────────────────────
+  async: ^2.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  test: ^1.24.0
+  mockito: ^5.4.4
+  build_runner: ^2.4.9
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.offline_ml_pipeline
+        pluginClass: OfflineMlPipelinePlugin
+        ffiPlugin: true          # enables dart:ffi native code on Android
+      ios:
+        pluginClass: OfflineMlPipelinePlugin
+        ffiPlugin: true          # enables dart:ffi native code on iOS
+  assets:
+    - assets/ort_training_templates/
