@@ -12,7 +12,8 @@
 
 
 
-<img src="assets/images/offline_ml_pipeline.jpg" width="696" height="375">
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/d492fd8b-b043-40d4-9f33-ca43b711378c" />
+
 
 
 
